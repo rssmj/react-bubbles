@@ -1,12 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Login } from './components/Login';
 import { PrivateRoute } from './utils/PrivateRoute';
-import BubblePage from './components/BubblePage';
-
-import Login from './components/Login';
+import { BubblePage } from './components/BubblePage';
 import './styles.scss';
 
-function App() {
+export default function App() {
 	return (
 		<Router>
 			<div className='App'>
@@ -14,7 +13,7 @@ function App() {
 					<Route exact path='/' component={Login} />
 					<PrivateRoute exact path='/bubbles' component={BubblePage} />
 				</Switch>
-					{/* 
+				{/* 
           Build a PrivateRoute component that will 
           display BubblePage when you're authenticated 
         */}
@@ -23,4 +22,4 @@ function App() {
 	);
 }
 
-export default App;
+// export default App;
