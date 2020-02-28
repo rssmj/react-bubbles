@@ -50,7 +50,7 @@ export const ColorList = ({ colors, updateColors, setUpdate }) => {
 
 	return (
 		<div className='colors-wrap'>
-			<p>colors</p>
+			<p className='colorsTitle'>colors</p>
 			<ul>
 				{colors.map(color => (
 					<li key={color.color} onClick={() => editColor(color)}>

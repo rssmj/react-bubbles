@@ -36,7 +36,7 @@ export const Login = () => {
 
 	return (
 		<>
-			<h1>Welcome to the Bubble App!</h1>
+			<h1 className='loginTitle'>bubble</h1>
 			{/* <p>Build a login page here</p> */}
 			<form className='loginForm' onSubmit={handleSubmit}>
 				<label htmlFor='username'>
@@ -61,7 +61,7 @@ export const Login = () => {
 						onChange={handleChange}
 					/>
 				</label>
-				<button className='loginBtn'>Sign In</button>
+				<button className='loginBtn'>pop in</button>
 			</form>
 		</>
 	);

@@ -14,27 +14,27 @@ export const Bubbles = ({ colors }) => {
 
 	return (
 		<div className='bubble-wrap'>
-			<p>bubbles</p>
-			<Svg width={400} height={400}>
+			<p className='bubbleTitle'>bubbles</p>
+			<Svg width={1000} height={1400}>
 				<Pack
 					data={{
 						children: bubbleData
 					}}
 					sum={datum => datum.value}
-					size={[400, 400]}
+					size={[1400, 1000]}
 					includeRoot={false}
-					nodeEnter={d => ({ ...d, r: 0 })}
+					nodeEnter={d => ({ ...d, r: 9999 })}
 					animate
 				>
 					{nodes =>
 						nodes
-							.map(({ x, y, r, key }, i) => {
+							.map(({ y, r, key }, i) => {
 								if (i < colors.length) {
 									return (
 										<Circle
 											key={key}
-											cx={x}
-											cy={y}
+											cx={y}
+											cy={r}
 											r={r}
 											fill={colors[i].code.hex}
 										/>

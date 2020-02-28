@@ -1,99 +1,172 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
 html,
 body,
 #root,
 .App {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
 }
 
 .App {
-  font-family: "Montserrat", sans-serif;
-  text-align: center;
-  display: flex;
+	font-family: 'Montserrat', sans-serif;
+	text-align: center;
+	display: flex;
 
-  svg {
-    height: 100%;
-  }
+	svg {
+		height: 100%;
+	}
 }
 
 .spacer {
-  height: 100%;
+	height: 100%;
+}
+
+.bubbleTitle {
+	font-size: 10rem;
+	margin: 5rem 0 20rem;
+	padding: 10rem;
+	width: 10rem;
+	height: 10rem;
+	border: transparent;
+	border-radius: 20rem;
+	text-shadow: 0 0.4rem 0.5rem rgba(0, 0, 0, 0.6);
+	color: transparentize($color: #ffffff, $amount: 0.01);
+	transition: 0.8s ease-out;
+}
+
+.bubbleTitle:hover {
+	text-shadow: 0 3.5rem 0.5rem rgba(0, 0, 0, 0.7);
+	box-shadow: 0 0.5rem 0.6rem rgba(0, 0, 0, 0.16),
+		0 1rem 1rem rgba(0, 0, 0, 0.23);
+	color: transparentize($color: #000000, $amount: 0.2);
+	background-color: transparentize($color: #f9597a, $amount: 0.1);
 }
 
 .bubble-wrap {
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
 }
 
 .colors-wrap {
-  height: 100%;
-  width: 300px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+	height: 100%;
+	width: 33rem;
+	box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.16), 0 3rem 6rem rgba(0, 0, 0, 0.23);
 
-  ul {
-    list-style: none;
-    text-align: start;
+	.colorsTitle {
+		font-size: 5rem;
+	}
 
-    li {
-      cursor: pointer;
-      padding: 6px 0;
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-    }
-  }
+	ul {
+    font-size: 1.8rem;
+		list-style: none;
+		text-align: start;
+
+		li {
+			cursor: pointer;
+			padding: 0.2rem;
+			display: flex;
+			justify-content: space-between;
+			width: 100%;
+		}
+	}
 }
 
 .delete {
-  color: rgb(216, 87, 87);
+  font-size: 2.5rem;
+  padding-right: .7rem;
+	color: transparentize($color: #f9597a, $amount: 0.1);
 }
 
 .color-box {
-  height: 16px;
-  width: 16px;
-  border: 1px lightgray solid;
-  margin-right: 36px;
+	height: 1.6rem;
+	width: 1.6rem;
+	border: 0.1rem lightgray solid;
+	margin-right: 3.6rem;
 }
 
 form {
-  margin-top: 60px;
-  display: flex;
-  flex-direction: column;
+	margin-top: 6rem;
+	display: flex;
+	flex-direction: column;
 
-  legend {
-    padding-left: 40px;
-    font-weight: bold;
-    text-align: left;
-    text-decoration: underline;
-    margin-bottom: 16px;
-  }
+	legend {
+		padding-left: 4rem;
+		font-weight: bold;
+		text-align: left;
+		text-decoration: underline;
+		margin-bottom: 1.6rem;
+	}
 
-  label {
-    display: flex;
-    justify-content: space-between;
-    padding: 4px 36px 4px 40px;
-  }
+	label {
+		display: flex;
+		justify-content: space-between;
+		padding: 0.4rem 3.6rem 0.4rem 4rem;
+	}
 
-  input {
-    width: 100px;
-  }
+	input {
+		width: 10rem;
+	}
 }
 
 .button-row {
-  display: flex;
-  justify-content: space-between;
-  padding: 0 36px 0 41px;
+	display: flex;
+	justify-content: space-between;
+	padding: 0 3.6rem 0 4.1rem;
 
-  button {
-    border: none;
-    background-color: black;
-    color: white;
-    padding: 3px 8px;
-    margin-top: 16px;
-  }
+	button {
+		border: none;
+		background-color: transparentize($color: #f9597a, $amount: 0.1);
+		color: white;
+		padding: 0.5rem;
+    margin-top: 1.6rem;
+    height: 6rem;
+    width: 6rem;
+    border-radius: 7rem;
+    
+	}
+}
+
+.loginTitle {
+	font-size: 10rem;
+	margin: 5rem;
+	padding: 10rem;
+	width: 10rem;
+	height: 10rem;
+	border: transparent;
+	border-radius: 20rem;
+	text-shadow: 0 0.4rem 0.5rem rgba(0, 0, 0, 0.6);
+	color: transparentize($color: #ffffff, $amount: 0.01);
+	transition: 0.8s ease-out;
+}
+
+.loginTitle:hover {
+	text-shadow: 0 3.5rem 0.5rem rgba(0, 0, 0, 0.7);
+	box-shadow: 0 0.5rem 0.6rem rgba(0, 0, 0, 0.16),
+		0 1rem 1rem rgba(0, 0, 0, 0.23);
+	color: transparentize($color: #000000, $amount: 0.2);
+	background-color: transparentize($color: #f9597a, $amount: 0.1);
+}
+
+.loginForm {
+	margin-top: 40rem;
+	display: flex;
+  flex-direction: column;
+
+}
+
+.loginBtn {
+  border: none;
+  background-color: transparentize($color: #f9597a, $amount: 0.1);
+  color: white;
+  margin: 1rem 15rem;
+  padding: 0.5rem;
+  height: 6rem;
+  width: 6rem;
+  border-radius: 7rem;
+  
+
 }
