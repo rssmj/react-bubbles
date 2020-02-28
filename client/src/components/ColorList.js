@@ -6,7 +6,7 @@ const initialColor = {
 	code: { hex: '' }
 };
 
-export const ColorList = ({ colors, updateColors }) => {
+export const ColorList = ({ colors, updateColors, setUpdate }) => {
 	console.log(colors);
 	const [editing, setEditing] = useState(false);
 	const [colorToEdit, setColorToEdit] = useState(initialColor);
@@ -26,6 +26,7 @@ export const ColorList = ({ colors, updateColors }) => {
 			.then(res => {
 				console.log(res.data);
 				updateColors(colors);
+				setUpdate(true);
 				setEditing(false);
 			})
 			.catch(err => {
@@ -40,6 +41,7 @@ export const ColorList = ({ colors, updateColors }) => {
 			.then(res => {
 				console.log(res.data);
 				updateColors(colors.filter(item => item.id !== color.id));
+				setUpdate(false);
 			})
 			.catch(err => {
 				console.log(`Error! Does not delete`, err.response);

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { axiosWithAuth } from '../utils/axiosWithAuth';
+import { axiosWithAuth } from '../utils/axiosWithAuth.js';
 import { useHistory } from 'react-router-dom';
 
 export const Login = () => {
@@ -45,6 +45,7 @@ export const Login = () => {
 						type='text'
 						name='username'
 						label='username'
+						placeholder='username'
 						value={login.username}
 						onChange={handleChange}
 					/>
@@ -55,6 +56,7 @@ export const Login = () => {
 						type='text'
 						name='password'
 						label='password'
+						placeholder='password'
 						value={login.password}
 						onChange={handleChange}
 					/>

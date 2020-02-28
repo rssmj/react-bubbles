@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { Login } from './components/Login';
-import { PrivateRoute } from './utils/PrivateRoute';
-import { BubblePage } from './components/BubblePage';
+import { Login } from './components/Login.js';
+import { PrivateRoute } from './utils/PrivateRoute.js';
+import { BubblePage } from './components/BubblePage.js';
 import './styles.scss';
 
 export default function App() {
