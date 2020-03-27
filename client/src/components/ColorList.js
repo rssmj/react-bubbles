@@ -3,17 +3,35 @@ import { axiosWithAuth } from '../utils/axiosWithAuth.js';
 
 const initialColor = {
 	color: '',
-	code: { hex: '' }
+	code: { hex: '' },
 };
 
 export const ColorList = ({ colors, updateColors, setUpdate }) => {
 	console.log(colors);
+	const [addingColor, setAddingColor] = useState(false);
+	const [colorToAdd, setColorToAdd] = useState(initialColor);
 	const [editing, setEditing] = useState(false);
 	const [colorToEdit, setColorToEdit] = useState(initialColor);
+
+	const addColor = color => {
+		setAddingColor(true);
+		setEditing(false);
+	};
 
 	const editColor = color => {
 		setEditing(true);
 		setColorToEdit(color);
+		setAddingColor(false);
+	};
+
+	const saveAdded = e => {
+		e.preventDefault();
+		setAddingColor(false);
+		axiosWithAuth()
+			.post('colors', colorToAdd)
+			.then(res => updateColors(res.data))
+			.catch(err => console.log(err));
+		setColorToAdd(initialColor);
 	};
 
 	const saveEdit = e => {
@@ -50,7 +68,8 @@ export const ColorList = ({ colors, updateColors, setUpdate }) => {
 
 	return (
 		<div className='colors-wrap'>
-			<p className='colorsTitle'>colors</p>
+			<p className='colorsTitle'>colors	<button className='addColor-button' onClick={addColor}> + </button></p>
+		
 			<ul>
 				{colors.map(color => (
 					<li key={color.color} onClick={() => editColor(color)}>
@@ -73,6 +92,45 @@ export const ColorList = ({ colors, updateColors, setUpdate }) => {
 					</li>
 				))}
 			</ul>
+
+			{addingColor && (
+				<form onSubmit={saveAdded}>
+					<legend>add color</legend>
+					<label>
+						color name:
+						<input
+							onChange={e =>
+								setColorToAdd({ ...colorToAdd, color: e.target.value })
+							}
+							value={colorToAdd.color}
+						/>
+					</label>
+					<label>
+						hex code:
+						<input
+							onChange={e =>
+								setColorToAdd({
+									...colorToAdd,
+									code: { hex: e.target.value },
+								})
+							}
+							value={colorToAdd.code.hex}
+						/>
+					</label>
+					<div className='button-row'>
+						<button type='submit'>save</button>
+						<button
+							onClick={() => {
+								setColorToAdd(false);
+								setColorToAdd(initialColor);
+							}}
+						>
+							cancel
+						</button>
+					</div>
+				</form>
+			)}
+
 			{editing && (
 				<form onSubmit={saveEdit}>
 					<legend>edit color</legend>
@@ -91,7 +149,7 @@ export const ColorList = ({ colors, updateColors, setUpdate }) => {
 							onChange={e =>
 								setColorToEdit({
 									...colorToEdit,
-									code: { hex: e.target.value }
+									code: { hex: e.target.value },
 								})
 							}
 							value={colorToEdit.code.hex}

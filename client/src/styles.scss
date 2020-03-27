@@ -61,7 +61,7 @@ body,
 	}
 
 	ul {
-    font-size: 1.8rem;
+		font-size: 1.8rem;
 		list-style: none;
 		text-align: start;
 
@@ -76,8 +76,8 @@ body,
 }
 
 .delete {
-  font-size: 2.5rem;
-  padding-right: .7rem;
+	font-size: 2.5rem;
+	padding-right: 0.7rem;
 	color: transparentize($color: #f9597a, $amount: 0.1);
 }
 
@@ -112,6 +112,18 @@ form {
 	}
 }
 
+
+button {
+	border: none;
+	background-color: transparentize($color: #f9597a, $amount: 0.1);
+	color: white;
+	padding: 0.5rem;
+	margin-top: 1.6rem;
+	height: 6rem;
+	width: 6rem;
+	border-radius: 7rem;
+}
+
 .button-row {
 	display: flex;
 	justify-content: space-between;
@@ -122,11 +134,10 @@ form {
 		background-color: transparentize($color: #f9597a, $amount: 0.1);
 		color: white;
 		padding: 0.5rem;
-    margin-top: 1.6rem;
-    height: 6rem;
-    width: 6rem;
-    border-radius: 7rem;
-    
+		margin-top: 1.6rem;
+		height: 6rem;
+		width: 6rem;
+		border-radius: 7rem;
 	}
 }
 
@@ -154,19 +165,16 @@ form {
 .loginForm {
 	margin-top: 40rem;
 	display: flex;
-  flex-direction: column;
-
+	flex-direction: column;
 }
 
 .loginBtn {
-  border: none;
-  background-color: transparentize($color: #f9597a, $amount: 0.1);
-  color: white;
-  margin: 1rem 15rem;
-  padding: 0.5rem;
-  height: 6rem;
-  width: 6rem;
-  border-radius: 7rem;
-  
-
+	border: none;
+	background-color: transparentize($color: #f9597a, $amount: 0.1);
+	color: white;
+	margin: 1rem 15rem;
+	padding: 0.5rem;
+	height: 6rem;
+	width: 6rem;
+	border-radius: 7rem;
 }
