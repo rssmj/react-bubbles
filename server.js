@@ -11,85 +11,113 @@ app.use(CORS());
 
 let colors = [
 	{
-		color: 'aliceblue',
+		color: 'palette 1',
 		code: {
-			hex: '#f0f8ff',
+			hex: '#9fffa5',
 		},
 		id: 1,
 	},
 	{
-		color: 'limegreen',
+		color: 'palette 1',
 		code: {
-			hex: '#99ddbc',
+			hex: '#9fffb9',
 		},
 		id: 2,
 	},
 	{
-		color: 'aqua',
+		color: 'palette 1',
 		code: {
-			hex: '#00ffff',
+			hex: '#9fffc7',
 		},
 		id: 3,
 	},
 	{
-		color: 'aquamarine',
+		color: 'palette 1',
 		code: {
-			hex: '#7fffd4',
+			hex: '#9fffd6',
 		},
 		id: 4,
 	},
 	{
-		color: 'lilac',
+		color: 'palette 1',
 		code: {
-			hex: '#9a99dd',
+			hex: '#9fffe0',
 		},
 		id: 5,
 	},
 	{
-		color: 'softpink',
+		color: 'palette 2',
 		code: {
-			hex: '#dd99ba',
+			hex: '#ffc19f',
 		},
 		id: 6,
 	},
 	{
-		color: 'bisque',
+		color: 'palette 2',
 		code: {
-			hex: '#dd9a99',
+			hex: '#ffcb9f',
 		},
 		id: 7,
 	},
 	{
-		color: 'softyellow',
+		color: 'palette 2',
 		code: {
-			hex: '#dcdd99',
+			hex: '#ffd99f',
 		},
 		id: 8,
 	},
 	{
-		color: 'blanchedalmond',
+		color: 'palette 2',
 		code: {
-			hex: '#ffebcd',
+			hex: '#ffe39f',
 		},
 		id: 9,
 	},
 	{
-		color: 'blue',
+		color: 'palette 2',
 		code: {
-			hex: '#6093ca',
+			hex: '#fff19f',
 		},
 		id: 10,
 	},
 	{
-		color: 'blueviolet',
+		color: 'palette 3',
 		code: {
-			hex: '#8a2be2',
+			hex: '#9ffff3',
 		},
 		id: 11,
 	},
+	{
+		color: 'palette 3',
+		code: {
+			hex: '#9feeff',
+		},
+		id: 12,
+	},
+	{
+		color: 'palette 3',
+		code: {
+			hex: '#9fdbff',
+		},
+		id: 13,
+	},
+	{
+		color: 'palette 3',
+		code: {
+			hex: '#9fc7ff',
+		},
+		id: 14,
+	},
+	{
+		color: 'palette 3',
+		code: {
+			hex: '#9fb9ff',
+		},
+		id: 15,
+	},
 ];
 
-let nextId = 12;
+let nextId = 16;
 
 function authenticator(req, res, next) {
 	const { authorization } = req.headers;
@@ -159,5 +187,5 @@ app.get('/', function(req, res) {
 });
 
 app.listen(5000, () => {
-	console.log('Server listening on port 5000');
+	console.log('Server listening on port 8888');
 });

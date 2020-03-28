@@ -7,7 +7,7 @@ export const Login = () => {
 	// when you have handled the token, navigate to the BubblePage route
 	const [login, setLogin] = useState({
 		username: '',
-		password: ''
+		password: '',
 	});
 
 	const history = useHistory();
